@@ -20,12 +20,12 @@ public class ArrayListHastableApp {
 
 		
 		//Ejercicio1
-		 Ejercicio1 ejercicio1 = new Ejercicio1();
-		 ejercicio1.iniciaEjercicio1();
+		 //Ejercicio1 ejercicio1 = new Ejercicio1();
+		 //ejercicio1.iniciaEjercicio1();
 		 
 			//Ejercicio2
-		 //Ejercicio2 ejercicio2 = new Ejercicio2();
-		 //ejercicio2.iniciaEjercicio2();
+		 Ejercicio2 ejercicio2 = new Ejercicio2();
+		 ejercicio2.iniciaEjercicio2();
 	}
 
 }
