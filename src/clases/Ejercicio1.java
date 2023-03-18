@@ -4,6 +4,8 @@
 package clases;
 
 import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -16,7 +18,7 @@ import utils.Utils;
 public class Ejercicio1 {
 
 	// -------------- Constantes ------------------
-	final static String TITULO = "C02-UD07-Ejercicio7";
+	final static String TITULO = "C02-UD07-Ejercicio1";
 
 	// --------- Variables------------
 	Scanner sc = new Scanner(System.in);
@@ -27,7 +29,7 @@ public class Ejercicio1 {
 	int numeroNotas;
 
 	double[][] arrayNotas = null;// array alumnos-notas
-	ArrayList<Double> notasMedias = new ArrayList<Double>();// arrayList notas medias por alumno
+	Hashtable<String, Double> notasMedias = new Hashtable<String,Double>();// Hashtable notas medias por alumno
 
 	// --------METODOS----------------
 	// ------------- Metodo que controla el flujo del ejercicio --------------
@@ -37,7 +39,8 @@ public class Ejercicio1 {
 		utils.mostrarPrograma(" Ejercicio 1 ");
 
 		// Rellenamos array de notas-alumnos
-		arrayNotas = rellenaArray(utils.pideInt("Numero de alumnos", TITULO), // Pedimos número de Alumnos
+		arrayNotas = rellenaArray(
+				utils.pideInt("Numero de alumnos", TITULO), // Pedimos número de Alumnos
 				utils.pideInt("Numero de notas", TITULO), // Pedimos número de Notas
 				arrayNotas);
 
@@ -57,8 +60,8 @@ public class Ejercicio1 {
 		double num = 0;
 
 		// cumplimenta Notas y alumnos de forma aleatoria
-		for (int i = 0; i < arrayNotas.length; i++) {
-			for (int j = 0; j < arrayNotas.length; j++) {
+		for (int i = 0; i < alumnos; i++) {
+			for (int j = 0; j < notas; j++) {
 				try {
 					num = Math.random() * 10+1;//TODO: Chequear porque falla a veces
 				} catch (Exception e) {
@@ -81,34 +84,35 @@ public class Ejercicio1 {
 		for (int i = 0; i < arrayNotas2.length; i++) {
 			double notaMedia = 0;
 			double notas = 0;
-			for (int j = 0; j < arrayNotas2.length; j++) {
+			for (int j = 0; j < arrayNotas2[0].length; j++) {
 				notas = notas + arrayNotas[i][j];// Calculamos el valor del dividendo(notas) para obtener la media
 			}
 			// Obtenemos la media
-			notaMedia = notas / arrayNotas.length;
-			notasMedias.add(notaMedia);
+			notaMedia = notas / arrayNotas[i].length;
+			
+			//llenar ArrayList con nota media alumno
+			notasMedias.put(String.valueOf(i+1),notaMedia);
 		}
 		// llama a metodo para imprimir notas medias
 		imprimeNotasMedias(notasMedias);
-
 	}
 
 	// Imprime Notas Medias - Recorrer ArrayList con Iterator
-	private void imprimeNotasMedias(ArrayList<Double> notasMedias2) {
+	private void imprimeNotasMedias(Hashtable<String,Double> notasMedias2) {
 
 		utils.imprime("Notas medias por alumno");
-		Iterator<Double> it = notasMedias2.iterator();
+		Enumeration<String> enum1 = notasMedias2.keys();
 
 		// Imprime valores de notas medias y alumnos
-		while (it.hasNext()) {
+		while (enum1.hasMoreElements()) {
 
 			// El valor del numero de alunmo lo obtiene mediante la obtencion del index de
 			// cada elemento.
-			Double element = it.next();
-			System.out.print("Alumno : " + notasMedias2.indexOf(element) + " --- Nota Media : ");
-			cc.imprimeColor(cc.ANSI_BMAGENTA, utils.dosPos(element));
+			String element = enum1.nextElement();
+			System.out.print("Alumno : " + element + " --- Nota Media : ");
+			cc.imprimeColor(cc.ANSI_BMAGENTA, utils.dosPos(notasMedias2.get(element)));
 		}
-		System.out.println("ArrayList" + notasMedias);
+		System.out.println("\nHashtable: " + notasMedias);
 	}
 
 }
