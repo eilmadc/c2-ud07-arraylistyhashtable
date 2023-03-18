@@ -1,7 +1,7 @@
 /**
  * C2-UD07- Ejercicio1
  */
-package clases;
+package clases_ej_1;
 
 import java.util.Enumeration;
 import java.util.Hashtable;

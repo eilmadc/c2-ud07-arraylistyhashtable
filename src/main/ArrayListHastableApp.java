@@ -3,8 +3,8 @@ package main;
  * 
  */
 
-import clases.Ejercicio1;
-import clases.Ejercicio2;
+import clases_ej_1.Ejercicio1;
+import clases_ej_2.Ejercicio2;
 
 /**
  * @author elena-01
