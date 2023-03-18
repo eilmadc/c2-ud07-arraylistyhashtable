@@ -64,14 +64,23 @@ public class Utils {
 	// mostrar titulo del ejercicio
 	public void mostrarTitulo(String mensaje) {
 		System.out.println("\n****************************************");
-		System.out.println("************** " + mensaje + " **************");
+		System.out.println("*************** " + mensaje + " ****************");
 		System.out.println("****************************************\n");
 	}
 
 	// mostrar numero ejercicio
 	public void mostrarPrograma(String mensaje) {
-		// C2-T06: Ejercicio 1
-		System.out.println("************** " + mensaje + " *************\n");
+		System.out.println("************ " + mensaje + " ***********\n");
 	}
 
+	//mostrar mensaje
+	public void imprime(String mensaje) {
+		System.out.println("\n------- " + mensaje + " -------\n");
+	}
+	
+	//Devuelve double o float por pantalla con 2 posiciones.
+	public String dosPos(double numero) {
+		String x = String.format("%.2f", numero);
+		return x;
+	}
 }

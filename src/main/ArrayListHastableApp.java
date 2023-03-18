@@ -18,7 +18,8 @@ public class ArrayListHastableApp {
 		// TODO Auto-generated method stub
 
 		//Ejercicio1
-		 ejercicio1 = new Ejercicio1(); ejercicio1.calculaMedia();
+		 Ejercicio1 ejercicio1 = new Ejercicio1();
+		 ejercicio1.iniciaEjercicio1();
 	}
 
 }
