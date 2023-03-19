@@ -1,12 +1,10 @@
 /**
  * C2-UD07- Ejercicio1
  */
-package clases;
+package clases_ej_1;
 
-import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Hashtable;
-import java.util.Iterator;
 import java.util.Scanner;
 
 import utils.ColorConsole;
@@ -29,7 +27,7 @@ public class Ejercicio1 {
 	int numeroNotas;
 
 	double[][] arrayNotas = null;// array alumnos-notas
-	Hashtable<String, Double> notasMedias = new Hashtable<String,Double>();// Hashtable notas medias por alumno
+	Hashtable<String, Double> notasMedias = new Hashtable<String, Double>();// Hashtable notas medias por alumno
 
 	// --------METODOS----------------
 	// ------------- Metodo que controla el flujo del ejercicio --------------
@@ -39,8 +37,7 @@ public class Ejercicio1 {
 		utils.mostrarPrograma(" Ejercicio 1 ");
 
 		// Rellenamos array de notas-alumnos
-		arrayNotas = rellenaArray(
-				utils.pideInt("Numero de alumnos", TITULO), // Pedimos número de Alumnos
+		arrayNotas = rellenaArray(utils.pideInt("Numero de alumnos", TITULO), // Pedimos número de Alumnos
 				utils.pideInt("Numero de notas", TITULO), // Pedimos número de Notas
 				arrayNotas);
 
@@ -63,20 +60,20 @@ public class Ejercicio1 {
 		for (int i = 0; i < alumnos; i++) {
 			for (int j = 0; j < notas; j++) {
 				try {
-					num = Math.random() * 10+1;//TODO: Chequear porque falla a veces
+					num = Math.random() * 10 + 1;// TODO: Chequear porque falla a veces
 				} catch (Exception e) {
 					System.out.println("Error de valor");
 				}
 				arrayNotas[i][j] = num; // Asigna valores de notas random
 
-						// Imprime valores de notas y alumnos
-						System.out.println("Alumno : " + (1 + i) + " --- Nota : " + utils.dosPos(num));
+				// Imprime valores de notas y alumnos
+				System.out.println("Alumno : " + (1 + i) + " --- Nota : " + utils.dosPos(num));
 			}
 		}
 		return arrayNotas;
 	}
 
-	// -------------Método para calcular Nota media y almacenarlo en ArrayList
+	// -------------Método para calcular Nota media y almacenarlo en Hashtable
 	// -------------------------
 	private void calculaNotaMedia(double[][] arrayNotas2) {
 
@@ -89,16 +86,16 @@ public class Ejercicio1 {
 			}
 			// Obtenemos la media
 			notaMedia = notas / arrayNotas[i].length;
-			
-			//llenar ArrayList con nota media alumno
-			notasMedias.put(String.valueOf(i+1),notaMedia);
+
+			// llenar Hashtable con id Alumno y nota media alumno
+			notasMedias.put(String.valueOf(i + 1), notaMedia);
 		}
 		// llama a metodo para imprimir notas medias
 		imprimeNotasMedias(notasMedias);
 	}
 
-	// Imprime Notas Medias - Recorrer ArrayList con Iterator
-	private void imprimeNotasMedias(Hashtable<String,Double> notasMedias2) {
+	// Imprime Notas Medias - Recorrer Hashtable con Enumeration
+	private void imprimeNotasMedias(Hashtable<String, Double> notasMedias2) {
 
 		utils.imprime("Notas medias por alumno");
 		Enumeration<String> enum1 = notasMedias2.keys();

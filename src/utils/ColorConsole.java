@@ -51,7 +51,13 @@ public class ColorConsole {
 	public final String ANSI_FBCYAN = "\u001B[106m";
 	public final String ANSI_FBWHITE = "\u001B[107m";
 
+	//Imprime con salto de linea
 	public void imprimeColor(String colour, String string) {
 		System.out.println(colour+string+ANSI_RESET);
+	}
+	
+	//Imprime sin salto de linea
+	public void imprimeColorSin(String colour, String string) {
+		System.out.print(colour+string+ANSI_RESET);
 	}
 }
