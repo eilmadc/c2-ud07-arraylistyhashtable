@@ -17,7 +17,7 @@ public class ArrayListHastableApp {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// TODO: hacer Switch case control Ejercicio 1 a 4
 
 		
 		//Ejercicio1
