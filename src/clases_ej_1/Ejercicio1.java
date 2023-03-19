@@ -60,7 +60,7 @@ public class Ejercicio1 {
 		for (int i = 0; i < alumnos; i++) {
 			for (int j = 0; j < notas; j++) {
 				try {
-					num = Math.random() * 10 + 1;// TODO: Chequear porque falla a veces
+					num = Math.random() * 10 + 1;
 				} catch (Exception e) {
 					System.out.println("Error de valor");
 				}
