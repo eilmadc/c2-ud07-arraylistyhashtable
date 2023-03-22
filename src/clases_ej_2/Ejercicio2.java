@@ -4,7 +4,6 @@
 package clases_ej_2;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -95,8 +94,7 @@ public class Ejercicio2 {
 			int posX = (int) (Math.random() * (arrayPrecios2.length - 1));
 
 			/*
-			 * PRUEBAS SALIDA 
-			 * System.out.println("IVA : " + iva);
+			 * PRUEBAS SALIDA System.out.println("IVA : " + iva);
 			 * System.out.println("Position X : " + posX);
 			 * System.out.println((arrayPrecios2[posX]));
 			 */
@@ -133,18 +131,18 @@ public class Ejercicio2 {
 			System.out.print("|______" + (i + 1) + "______|____");
 			cc.imprimeColorSin(cc.ANSI_BGREEN, utils.dosPos(element.precioBruto));
 			System.out.print("____|_____" + (element.IVA) * 100 + "% _____|___");
-			cc.imprimeColorSin(cc.ANSI_BGREEN, utils.dosPos(element.precioBruto + element.precioBruto * element.IVA )+ "___|");
+			cc.imprimeColorSin(cc.ANSI_BGREEN,
+					utils.dosPos(element.precioBruto + element.precioBruto * element.IVA) + "___|");
 			System.out.println("\n");
 			i++;
 		}
 		System.out.println("--------------------------------------------");
-		cc.imprimeColor(cc.ANSI_YELLOW, "PRECIO TOTAL BRUTO: " +utils.dosPos(suma));
-		cc.imprimeColor(cc.ANSI_YELLOW,"PRECIO TOTAL IVA: "+utils.dosPos(sumaIVA));
-		cc.imprimeColor(cc.ANSI_YELLOW,"CANTIDAD ABONADA :" +utils.dosPos(dinero));
-		cc.imprimeColor(cc.ANSI_YELLOW,"CAMBIO A DEVOLVER: " +utils.dosPos((dinero-sumaIVA)));
+		cc.imprimeColor(cc.ANSI_YELLOW, "PRECIO TOTAL BRUTO: " + utils.dosPos(suma));
+		cc.imprimeColor(cc.ANSI_YELLOW, "PRECIO TOTAL IVA: " + utils.dosPos(sumaIVA));
+		cc.imprimeColor(cc.ANSI_YELLOW, "CANTIDAD ABONADA :" + utils.dosPos(dinero));
+		cc.imprimeColor(cc.ANSI_YELLOW, "CAMBIO A DEVOLVER: " + utils.dosPos((dinero - sumaIVA)));
 		System.out.println("--------------------------------------------");
-		
-		//System.out.println("ArrayList" + carritoCompra2);
+
 	}
 
 }

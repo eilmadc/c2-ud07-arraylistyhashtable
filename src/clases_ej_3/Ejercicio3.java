@@ -64,8 +64,8 @@ public class Ejercicio3 {
 
 		// Muestra el menu mediante poantalla y dialog
 		utils.mostrarTitulo(cc.ANSI_FBLUE + "" + "MENU" + cc.ANSI_RESET);
-		String mensaje = " Opcion 1: Introducir nuevo Articulo:" + "\n Opcion 2: Introducir nuevo Stock:"
-				+ "\n Opcion 3: Imprimir Articulos:";
+		String mensaje = " Opcion 1: Introducir nuevo Articulo" + "\n Opcion 2: Introducir nuevo Stock"
+				+ "\n Opcion 3: Imprimir Articulos"+ "\n Opcion 4: Imprimir Detalles Articulo";
 		System.out.println(mensaje);
 
 		int opcion;
@@ -77,7 +77,7 @@ public class Ejercicio3 {
 			opcion = utils.pideInt(mensaje, "MENU");
 			System.out.println(opcion);
 
-		} while (opcion > 3);
+		} while (opcion > 4);
 
 		verificaOpcion(opcion);
 
@@ -105,6 +105,14 @@ public class Ejercicio3 {
 				break;
 			case 3:
 				imprimeArticulos();
+				break;
+			case 4:
+				String articulo1 = utils.pideString("NOMBRE ARTICULO: ", "OPCION 4");
+				if (dic.containsKey(articulo1)) {
+					imprimeArticulo(articulo1);
+				} else {
+					utils.mostrarMensajeDialog("El articulo no existe", "OPCION 2");
+				}
 				break;
 			default:
 				break;
