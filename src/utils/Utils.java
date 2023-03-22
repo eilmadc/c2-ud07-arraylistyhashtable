@@ -63,8 +63,8 @@ public class Utils {
 
 	// mostrar titulo del ejercicio
 	public void mostrarTitulo(String mensaje) {
-		System.out.println("\n****************************************");
-		System.out.println("*********** " + mensaje + " ************");
+		System.out.println("****************************************");
+		System.out.println("     *** " + mensaje + " ***     ");
 		System.out.println("****************************************\n");
 	}
 

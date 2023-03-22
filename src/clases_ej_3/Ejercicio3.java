@@ -40,11 +40,12 @@ public class Ejercicio3 {
 		// los almacena Hastable de Productos
 		generaArticulos();
 		imprimeMenu();
+
 	}
 
-	//genera 10 Articulos
+	// genera 10 Articulos
 	public void generaArticulos() {
-		//Libros mas populares en los ultimos 50 años
+		// Libros mas populares en los ultimos 50 años
 		dic.put("La Biblia", new Producto(30, 20));
 		dic.put("Citas del Presidente Mao Tse-Tung", new Producto(25, 2));
 		dic.put("Harry Potter", new Producto(12, 10));
@@ -57,6 +58,7 @@ public class Ejercicio3 {
 		dic.put("El diario de Ana Frank", new Producto(10, 8));
 
 	}
+
 	// Imprimir Menu
 	private void imprimeMenu() {
 
@@ -75,7 +77,7 @@ public class Ejercicio3 {
 			opcion = utils.pideInt(mensaje, "MENU");
 			System.out.println(opcion);
 
-		} while (opcion >3);
+		} while (opcion > 3);
 
 		verificaOpcion(opcion);
 
@@ -83,25 +85,39 @@ public class Ejercicio3 {
 
 	// Verifica Opcion del menu
 	private void verificaOpcion(int opcion) {
-		switch (opcion) {
-		case 1:
-			int num = utils.pideInt("¿Cuantos articulos quieres introducir?", "OPCION 1");
-			introduceArticulos(num);
-			break;
-		case 2:
-			String articulo = utils.pideString("NOMBRE ARTICULO: ", "OPCION 2");
-			if (dic.containsKey(articulo)) {
-				int stock = utils.pideInt("Introduce CANTIDAD para artículo : ", "OPCION 2");
-				dic.get(articulo).setStock(stock);
+
+		String respuesta = "si";
+		do {
+
+			switch (opcion) {
+			case 1:
+				int num = utils.pideInt("¿Cuantos articulos quieres introducir?", "OPCION 1");
+				introduceArticulos(num);
+				break;
+			case 2:
+				String articulo = utils.pideString("NOMBRE ARTICULO: ", "OPCION 2");
+				if (dic.containsKey(articulo)) {
+					int stock = utils.pideInt("Introduce CANTIDAD para artículo : ", "OPCION 2");
+					dic.get(articulo).setStock(stock);
+				} else {
+					utils.mostrarMensajeDialog("El articulo no existe", "OPCION 2");
+				}
+				break;
+			case 3:
+				imprimeArticulos();
+				break;
+			default:
+				break;
 			}
-			break;
-		case 3:
-			imprimeArticulos();
-			break;
-		default:
-			imprimeMenu();
-			break;
-		}
+
+			respuesta = utils.pideString("¿Deseas continuar?(si,no);", TITULO);
+			System.out.println(respuesta);
+			
+			if (respuesta.equals( "si" )) {
+				imprimeMenu();
+			}
+			
+		} while (respuesta == "si");
 
 	}
 
@@ -119,7 +135,7 @@ public class Ejercicio3 {
 
 	// Metodo para imprimir todos los articulos
 	public void imprimeArticulos() {
-		
+
 		utils.mostrarTitulo(cc.ANSI_FBLUE + "" + "Articulos en Stock" + cc.ANSI_RESET);
 		Enumeration<String> keys = dic.keys();
 
