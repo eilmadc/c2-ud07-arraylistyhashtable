@@ -38,7 +38,7 @@ public class ArrayListHastableApp {
 
 		// Muestra el menu mediante poantalla y dialog
 		utils.mostrarTitulo("MENU");
-		String mensaje = " Opcion 1: EJERCICIO 1" + "\n Opcion 2: EJERCICIO 2" + "\nOpcion 3: EJERCICIO 3"
+		String mensaje = " Opcion 1: EJERCICIO 1" + "\n Opcion 2: EJERCICIO 2" + "\n Opcion 3: EJERCICIO 3"
 				+ "\n Opcion 4: EJERCICIO 4";
 		System.out.println(mensaje);
 
