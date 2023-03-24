@@ -1,7 +1,7 @@
 package main;
 
 /**
- * 
+ * c2-UD07
  */
 
 import java.util.Scanner;
@@ -18,14 +18,13 @@ import utils.Utils;
  *
  */
 public class ArrayListHastableApp {
-	
+
 	// --------- Variables ------------
-	
-	public  Scanner sc = new Scanner(System.in);
+
+	public Scanner sc = new Scanner(System.in);
 	public static Utils utils = new utils.Utils();
 	public ColorConsole cc = new utils.ColorConsole();
-	
-	
+
 	/**
 	 * @param args
 	 */
@@ -34,15 +33,13 @@ public class ArrayListHastableApp {
 		imprimeMenuPrincipal();
 	}
 
-
-	
 	// Imprimir Menu
 	static public void imprimeMenuPrincipal() {
 
 		// Muestra el menu mediante poantalla y dialog
-		utils.mostrarTitulo(  "MENU" );
-		String mensaje = " Opcion 1: EJERCICIO 1" + "\n Opcion 2: EJERCICIO 2"
-				+ "\nOpcion 3: EJERCICIO 3" + "\n Opcion 4: EJERCICIO 4";
+		utils.mostrarTitulo("MENU");
+		String mensaje = " Opcion 1: EJERCICIO 1" + "\n Opcion 2: EJERCICIO 2" + "\nOpcion 3: EJERCICIO 3"
+				+ "\n Opcion 4: EJERCICIO 4";
 		System.out.println(mensaje);
 
 		int opcion;
@@ -59,7 +56,7 @@ public class ArrayListHastableApp {
 		verificaOpcionPrincipal(opcion);
 
 	}
-	
+
 	// Verifica Opcion del menu
 	static public void verificaOpcionPrincipal(int opcion) {
 
@@ -68,7 +65,7 @@ public class ArrayListHastableApp {
 
 			switch (opcion) {
 			case 1:
-				//Ejercicio1
+				// Ejercicio1
 				Ejercicio1 ejercicio1 = new Ejercicio1();
 				ejercicio1.iniciaEjercicio1();
 				break;
@@ -94,13 +91,12 @@ public class ArrayListHastableApp {
 
 			respuesta = utils.pideString("¿Deseas continuar?(si,no);", "MENU PRINCIPAL UD07");
 			System.out.println(respuesta);
-			
-			if (respuesta.equals( "si" )) {
+
+			if (respuesta.equals("si")) {
 				imprimeMenuPrincipal();
 			}
-			
+
 		} while (respuesta == "si");
 
 	}
-
 }

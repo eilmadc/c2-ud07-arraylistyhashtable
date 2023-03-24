@@ -73,14 +73,15 @@ public class Utils {
 		System.out.println("************ " + mensaje + " ***********\n");
 	}
 
-	//mostrar mensaje
+	// mostrar mensaje
 	public void imprime(String mensaje) {
 		System.out.println("\n------- " + mensaje + " -------\n");
 	}
-	
-	//Devuelve double o float por pantalla con 2 posiciones.
+
+	// Devuelve double o float por pantalla con 2 posiciones.
 	public String dosPos(double numero) {
 		String x = String.format("%.2f", numero);
 		return x;
 	}
+
 }
